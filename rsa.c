@@ -60,5 +60,7 @@ int main(int ac, char **av)
 		else
 			printf("Not found\n");
 	}
+	free(line);
+	fclose(file);
 	return (0);
 }

@@ -37,5 +37,7 @@ int main(int ac, char **av)
 			printf("%u=%u*%u\n", n, p, q);
 		}
 	}
+	fclose(file);
+	free(line);
 	return (0);
 }
