@@ -36,9 +36,8 @@ int main(int ac, char **av)
 	}
 	while ((getline(&line, &bufsize, file)) != -1)
 	{
-		line = strtok(line, " \n");
 		sscanf(line, "%lu", &n);
-		for (iter = 2; iter < n; iter++)
+		for (iter = 2; iter <= n; iter++)
 		{
 			if (n % iter == 0)
 			{
