@@ -22,7 +22,6 @@ int main(int ac, char **av)
 	}
 	while ((getline(&line, &bufsize, file)) != -1)
 	{
-		line = strtok(line, " \n");
 		sscanf(line, "%u", &n);
 		for (i = 2; i < n; i++)
 		{
