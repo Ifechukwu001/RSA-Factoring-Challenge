@@ -37,7 +37,7 @@ int main(int ac, char **av)
 	while ((getline(&line, &bufsize, file)) != -1)
 	{
 		sscanf(line, "%lu", &n);
-		for (iter = 2; iter <= n; iter++)
+		for (iter = 2; iter < n; iter++)
 		{
 			if (n % iter == 0)
 			{
@@ -57,9 +57,10 @@ int main(int ac, char **av)
 			printf("%lu=%lu*%lu\n", n, p, q);
 		}
 		else
-			printf("Not found\n");
+			printf("%lu=%lu*1\n", n, n);
+		free(line);
+		line = NULL;
 	}
-	free(line);
 	fclose(file);
 	return (0);
 }

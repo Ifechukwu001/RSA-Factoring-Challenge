@@ -36,6 +36,8 @@ int main(int ac, char **av)
 		{
 			printf("%u=%u*%u\n", n, p, q);
 		}
+		else
+			printf("%u=%u*1\n", n, n);
 	}
 	fclose(file);
 	free(line);
