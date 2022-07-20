@@ -4,7 +4,7 @@
 
 int main(int ac, char **av)
 {
-	unsigned int i, n, p = 0, q = 0;
+	long unsigned int i, n, p = 0, q = 0;
 	FILE *file;
 	char *line;
 	size_t bufsize = 0;
@@ -22,8 +22,8 @@ int main(int ac, char **av)
 	}
 	while ((getline(&line, &bufsize, file)) != -1)
 	{
-		sscanf(line, "%u", &n);
-		for (i = 2; i <= n; i++)
+		sscanf(line, "%lu", &n);
+		for (i = 2; i < n; i++)
 		{
 			if (n % i == 0)
 			{
@@ -34,10 +34,8 @@ int main(int ac, char **av)
 		}
 		if (p && q)
 		{
-			printf("%u=%u*%u\n", n, p, q);
+			printf("%lu=%lu*%lu\n", n, p, q);
 		}
-		else
-			printf("%u=%u*1\n", n, n);
 	}
 	fclose(file);
 	free(line);
